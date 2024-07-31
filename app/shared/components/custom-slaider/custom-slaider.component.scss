@@ -1,0 +1,26 @@
+swiper-slide {
+   display: flex;
+  // justify-content: center;
+  // align-items: center;
+   max-width: 500px;
+   max-height: 400px;
+   min-height: 400px;
+}
+.slide-content {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.621); /* Fondo semi-transparente */
+  padding: 10px;
+  border-radius: 5px;
+  h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  p {
+    margin: 5px 0 0;
+    font-size: 16px;
+  }
+}
+

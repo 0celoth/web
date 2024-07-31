@@ -1,0 +1,45 @@
+<ion-content>
+  <app-logo></app-logo>
+
+  <div class="d-flex-center">
+    <form>
+
+    <app-custom-input 
+    [control]="form.controls.email"
+    type="email"
+    label="Correo"
+    ></app-custom-input>
+    <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+
+      <div *ngIf="form.controls.email.errors?.['required']">El correo es requerido</div>
+      <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
+  
+    </div>
+    
+  
+    
+    <app-custom-input 
+    [control]="form.controls.password"
+    type="password"
+    label="Contraseña"
+    ></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.password.touched && form.controls.password.invalid">
+      <div *ngIf="form.controls.password.hasError('required')">La contraseña es requerida.</div>
+      <div *ngIf="form.controls.password.hasError('minlength')">La contraseña debe tener al menos 8 caracteres.</div>
+    </div>  
+
+    <ion-button  (click)='signUp()' expand="block" color="danger" mode="ios" class="submit" [disabled]="form.invalid" >
+      Enviar
+      <ion-icon slot="end" name="paper-plane-outline"></ion-icon>
+    </ion-button>
+    
+    <ion-button expand="block" color="danger" routerLink="/auth" mode="ios" fill="outline" class="submit">
+      Cancelar 
+      <ion-icon slot="end" name="close"></ion-icon>
+    </ion-button>
+   
+
+  </form>
+  </div>
+</ion-content>
